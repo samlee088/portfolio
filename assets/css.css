@@ -3,7 +3,7 @@
     --end-colors:navajowhite;
     --caption-colors:rgb(78, 67, 62);
     --caption-font:35px;
-    --pic-width: 200px;
+    --pic-width: 225px;
     --pic-height: 300 px;
     --border-size:2px;
     --border-style: ridge;
@@ -12,39 +12,29 @@
 }
 
 
+/* This is the code for the styling of the header */
 
-
-header {
+header { 
+    display: flex;
+    justify-content: space-between;
+    color: var(--caption-colors);
+    position:relative;
+    margin-top: -5px;
+    height:60px;
+    align-items:center;
     background-color:var(--end-colors);
 }
 
 
-.header { 
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    color: var(--caption-colors);
-   position:relative;
-   margin-top: -5px;
-   height:60px;
-   align-items:center;
-}
-
-
-.header h1  {
+header h1  {
     font-size: var(--caption-font);
-    margin-left: 30px;
+    margin-left: 10px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.header img about-me img{
-    height: 100px;
-    max-width: 100%;
-    width: 100%;
-    height: auto !important;
-}
 
-.header nav {
+
+header nav {
     padding-top: 0px;
     margin-right: 30px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -53,45 +43,76 @@ header {
     
 }
 
-.header nav ul {
+header nav ul {
     list-style-type: none;
 }
 
 
-.header nav ul li {
+header nav ul li {
     display: inline-block;
     margin-left:30px;
     border-left: 5px solid dodgerblue;
 }
 
 
+/* This is the code for picture that divides the header from the main content */
+
 .divider {
     height: 800px;
     width: 100%;
     margin-bottom: 0px;
-    background-image: url("./images/Space\ Needle.jpg");
-    background-size: cover;
-    background-position: center;
+}
+.divider img {
+    width:100%;
+    height:100%;
 }
 
 
+/* The start of the codes for the body of the webpage */
+body {
+    background-color: var(--base);
+}
 
+/* This is used to help with the formatting with the overall media queries */
 .card-column {
     flex: 1 0 100%;
-    /* when the screen resizes, make it so our columns don't jump in size */
     transition: flex-basis 500ms linear;
-    margin-bottom: 1.5rem;
+    align-items:center;
+    justify-content: center;
   }
 
 
+/* This identifier class is for the styling of the section break headers */
+.identifier {
+    font-size:var (--caption-font);
+    text-align:left;
+    box-sizing:border-box;
+    border-top:var(--border-size) var(--border-style) var(--border-color);
+    border-bottom:var(--border-size) var(--border-style) var(--border-color);
+    background-color:var(--base);
+    height: 50px;
+    align-items: center;
+    background-color:var(--end-colors);
+}
 
+.identifier h1{
+    letter-spacing: -1px; 
+    color: var(--caption-colors); 
+    text-shadow: 1px 1px 0 #000; 
+    margin:0px;
+    margin-left:10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* This is the section for the style for the 'aboutme' content */
 .about-me {
     display:flex;
     flex-direction: row;
     justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
 }
-
-
 
 .personal-description {
     display:flex;
@@ -113,74 +134,37 @@ header {
 }
 
 
-.identifier {
-    font-size:var (--caption-font);
-    text-align:left;
-    box-sizing:border-box;
-    border-top:var(--border-size) var(--border-style) var(--border-color);
-    border-bottom:var(--border-size) var(--border-style) var(--border-color);
-    background-color:var(--base);
-    height: 50px;
-    align-items: center;
-   background-color:var(--end-colors);
-}
-
-.identifier h1{
-    letter-spacing: -1px; 
-    color: var(--caption-colors); 
-    text-shadow: 1px 1px 0 #000; 
-    margin:0px;
-}
-
-
+/* The card-lead class is shape the whole section of the leading application */
 .card-lead {
-    display:flex;
-    flex-wrap:wrap;
-    flex-direction:column;
     border-bottom:var(--border-size) var(--border-style) var(--border-color);
-  
-    align-items:center;
-   
-}
-
-
-
-.card-content {
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    
-     
 }
 
 .picture-lead {
     width: 300px;
     height: 500px;
-    overflow: hidden;
 }
-
 .picture-lead:hover {
     transform: scale(1.1);
     filter: brightness(.9);
-    
 }
 
 .card-title {
-     width: 280px;
-     justify-content: center;
-     padding-left:30px;
-}
-
-.card-description {
-    display:none;
+    width: 225px;
+    justify-content: center;
+    overflow-wrap:normal;
 }
 
 
-.card-title:hover card-description {
-   display:inline-block;
-} 
+/* This card-content code is shared by all applications */
+.card-content {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    flex-wrap:wrap;
+}
 
 
+/* This is the code for the rest of the applications */
 .card {
     display:flex;
     flex-wrap:wrap;
@@ -203,10 +187,9 @@ header {
     
 }
 
-body {
-    background-color: var(--base);
-}
 
+
+/* This is the start of the code that applies to the footer */
 footer {
     text-align: center;
     font-size:50px;
@@ -233,21 +216,18 @@ footer h2 {
     border-radius: 50%;
 }
 
-
 .fa:hover {
-    opacity: 0.7;
-}
-
-.fa-github {
-    background: var(--end-colors);
-    font-size:50px;
+    opacity: 0.9;
+    transform: scale(1.1);
 }
 
 
 
 /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
 @media screen and (min-width: 768px) {
-    /* on tablets, set columns to only be 50% of the width and not grow */
+    /* on tablets, set columns to only be 100% of the width and not grow */
+  
+
     .card-column {
       flex: 0 0 100%;
       max-width: 100%;
@@ -256,11 +236,15 @@ footer h2 {
     /* select the last child to grow to full width if it has space to grow */
     .card-column:last-child {
       flex-grow: 1;
+
     }
   }
   
   /* media query for larger screens */
   @media screen and (min-width: 992px) {
+   
+
+    
     header {
       width: 100%;
     }
