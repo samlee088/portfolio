@@ -11,6 +11,8 @@ This is a project that is available online via weblink.
 
 Additionally, the back-end coding is available for download through github.
 
+- https://github.com/samlee088/portfolio
+
 ## Usage
 This is a project that can be used as a sample coding portfolio for applying to a junior entry level coding position. 
 
